@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+
+# flags: NC tells apache that this rule should be case-insensitive
+# L tells apache to not process any more rules if this one is used
+
+	RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php?controller=$1&action=$2&id=$3 [NC,L]
+
+</IfModule>
